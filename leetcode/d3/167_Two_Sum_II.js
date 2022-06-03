@@ -28,21 +28,37 @@ if yes get both index
 let numbers = [2,3,4]
 let target = 6
 var twoSum = function(numbers, target) {
-    let result = []
-    //loop through arr
-    for(let x = 0; x< numbers.length; x++){
-        //nest loop to compare
-        for(let y = 0; y <numbers.length && y != x; y++){
-            if (numbers[x] + numbers[y] === target){
-                // console.log(numbers[x]);
-                // console.log(numbers[y]);
-                result[0] =y+1;
-                result[1] = x+1;
+    // works but slow
+    // let result = []
+    // //loop through arr
+    // for(let x = 0; x< numbers.length; x++){
+    //     //nest loop to compare
+    //     for(let y = 0; y <numbers.length && y != x; y++){
+    //         if (numbers[x] + numbers[y] === target){
+    //             // console.log(numbers[x]);
+    //             // console.log(numbers[y]);
+    //             result[0] =y+1;
+    //             result[1] = x+1;
                 
-                return result
-            }
+    //             return result
+    //         }
+    //     }
+    // }
+    x = 0;
+    y = numbers.length -1;
+
+    while (x < y){
+        let sum = numbers[x] + numbers[y]
+        if (sum === target){
+            break
+        }
+        if (sum > target){
+            y--
+        } else if (sum < target){
+            x++
         }
     }
+    return [1+x,1+y]
 };
 
 console.log(twoSum(numbers, target));
