@@ -22,5 +22,27 @@ rotate 3 steps to the right: [5,6,7,1,2,3,4]
 ----
 -if pointer is out of array
 -get the position + k then subtract it by array length and-1
+
+
+
+==================
+1. put value of p1 to temp
+2. 
 */
- 
+let nums = [1,2,3,4,5,6,7]
+let k = 3
+
+
+function rotate(nums, k) {
+    if (k>=nums.length){
+        k = k % nums.length
+    }
+    if (k===0) {
+        return nums
+    }
+    nums.unshift(...nums.slice(-k))
+    nums.splice(-k)
+    return nums
+}
+
+console.log(rotate(nums,k))
