@@ -9,7 +9,7 @@ rotate 2 steps to the right: [6,7,1,2,3,4,5]
 rotate 3 steps to the right: [5,6,7,1,2,3,4]
 
 - need two pointers
-- need 2 temp variable
+- need  temp variable
 1. have both pointers pointing at [0]
 2. move pointer1 k times
 3. save value of pointer1 to temp variable
@@ -23,4 +23,17 @@ rotate 3 steps to the right: [5,6,7,1,2,3,4]
 -if pointer is out of array
 -get the position + k then subtract it by array length and-1
 */
- 
+var rotate = function(nums, k) {
+    //2 pointers and temp
+    let pointer1 = nums[0]
+    let pointer2 = nums[0]
+    let temp
+
+    //loop through arr
+    for (let x = 0; x < nums.length; x++){
+        //move pointer1 l times
+        pointer1 = nums[x + k] 
+        temp = pointer1
+        pointer2 = pointer1
+    }
+};
