@@ -22,6 +22,12 @@ rotate 3 steps to the right: [5,6,7,1,2,3,4]
 ----
 -if pointer is out of array
 -get the position + k then subtract it by array length and-1
+
+
+
+==================
+1. put value of p1 to temp
+2. 
 */
 var rotate = function(nums, k) {
     //2 pointers and temp
